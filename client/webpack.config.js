@@ -20,8 +20,11 @@ module.exports = () => {
         title: 'Text Editor,'
       }),
 
+      // sets up service worker
       new InjectManifest({
+        //source file
         swSrc: './src-sw.js',
+        //destination file
         swDest: 'src-sw.js',
       }),
 
@@ -31,9 +34,11 @@ module.exports = () => {
         name: 'Text Editor',
         short_name: 'JATE',
         description: 'Just Another Text Editor',
+        //adds a temporary color while page loads
         background_color: '#272822',
         start_url: '/',
         publicPath: '/',
+        //sets icon path and size
         icons: [
           {
             src: path.resolve('src/images/logo.png'),
