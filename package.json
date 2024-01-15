@@ -4,15 +4,15 @@
   "description": "",
   "main": "server.js",
   "scripts": {
-    "start:dev": "",
-    "start": "",
-    "server": "",
-    "build": "",
-    "install": "",
-    "client": ""
+    "start:dev": "concurrently \"cd server && nodemon server.js\" \"cd client && npm run dev\" ",
+    "start": "npm run build && cd server && nodemon server.js",
+    "server": "cd server nodemon server.js --ignore client",
+    "build": "cd client && npm run build",
+    "install": "cd client && npm i && cd ../client && npm i",
+    "client": "cd client && npm start"
   },
   "keywords": [],
-  "author": "",
+  "author": "KC-Nick",
   "license": "ISC",
   "dependencies": {
     "express": "^4.17.1",
