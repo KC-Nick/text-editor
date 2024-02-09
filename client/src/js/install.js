@@ -1,37 +1,31 @@
 const butInstall = document.getElementById('buttonInstall');
-
-//ask tutor about this file
+let deferredPrompt = null;
 
 window.addEventListener('beforeinstallprompt', (event) => {
-
+    console.log('test');
     event.preventDefault();
     // stashes event to be triggered later
-    window.deferredPrompt = event;
-    // shows install button in ui
+    deferredPrompt = event;
+    // // shows install button in ui
     butInstall.style.display = 'block';
 });
 
 butInstall.addEventListener('click', async () => {
-
-    const promptEvent = window.deferredPrompt;
-
-    if (!promptEvent) {
-        // deferred prompt isn't available.
+    console.log('testing', deferredPrompt);
+    if (!deferredPrompt) {
         return;
-    }
+      }
 
-    // shows prompt
-    promptEvent.prompt();
+      //awaits prompt answer
+      const result = await deferredPrompt.prompt();
+      console.log(`User choice: ${result.outcome}`);
 
-    //resets the deferred prompt variable
-    window.deferredPrompt = null;
-
-    // hides install button on click
-    butInstall.style.display = 'none';
+      //resets deferredPrompt
+      deferredPrompt = null;
 });
 
 
 window.addEventListener('appinstalled', (event) => {
     console.log('App installed successfully!');
-    window.deferredPrompt = null;
+    deferredPrompt = null;
 });

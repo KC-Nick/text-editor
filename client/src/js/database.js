@@ -33,7 +33,7 @@ export const putDb = async (content) => {
 
     const store = tx.objectStore('jate');
 
-    const request = store.put({ id: id, content: content });
+    const request = store.put({ content: content });
     const result = await request;
     console.log('Data saved to jateDb', result);
 
@@ -67,7 +67,7 @@ export const getDb = async () => {
     // waits for the results to the request and logs them, then returns
     const result = await request;
     console.log('result.value', result);
-    return result;
+    return result.value;
 
   } catch (error) {
 

@@ -12,7 +12,7 @@ The starter code was provided by the Ohio State University Full-Stack Web Develo
 
 ## Preview
 
-(Add app preview screenshot/s)
+![A preview of the page](./readmeassets/preview.png)
 
 ## Usage
 
