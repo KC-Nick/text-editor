@@ -2,9 +2,9 @@
   "name": "JATE",
   "scripts": {
     "dev": "webpack-dev-server",
-    "build": "webpack --mode production",
+    "build": "npm run check-webpack-cli && webpack --mode production",
     "start": "webpack --watch",
-    "prebuild": "npm install -D webpack-cli"
+    "check-webpack-cli": "webpack-cli --version"
   },
   "author": "2U",
   "license": "UNLICENSED",
