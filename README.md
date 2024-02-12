@@ -10,6 +10,10 @@ In this app, one will be able to install the app as if it were a native app to i
 
 The starter code was provided by the Ohio State University Full-Stack Web Development Bootcamp, found here; [LINK](https://github.com/coding-boot-camp/cautious-meme).
 
+## Description
+
+This is a project that uses Webpack, among other technologies, to create a website to write text and edit it. With it saving when you click off the page, it then can be checked and used offline. This allows users to keep access to a web page even if, say, their internet shuts off or if they're traveling. In offline, it will work the same as online ie. saving when the screen isn't active and the user can edit their notes.
+
 ## Preview
 
 ![A preview of the page](./readmeassets/preview.png)
